@@ -1,1 +1,125 @@
-adds
+🛒 Sistema de Pedido de Loja
+🎯 Objetivo do Projeto
+
+Simular pedidos em uma loja com vários produtos, demonstrando como classes podem se relacionar e se compor.
+Cada pedido contém itens, e cada item contém um produto e sua quantidade, permitindo calcular o valor total do pedido.
+
+🏗 Estrutura do Projeto
+1️⃣ Classe Produto
+
+Atributos:
+
+nome (String) – Nome do produto
+
+preco (BigDecimal) – Preço do produto
+
+Objetivo:
+Representa um produto da loja com validações:
+
+Nome não pode estar vazio
+
+Nome deve começar com letra maiúscula
+
+Preço deve ser maior que zero
+
+2️⃣ Classe ItemPedido
+
+Atributos:
+
+produto (Produto) – Produto comprado
+
+quantidade (Integer) – Quantidade do produto
+
+Objetivo:
+Representa a compra de um produto em determinada quantidade.
+Validações:
+
+Produto não pode ser nulo
+
+Quantidade deve ser maior que zero
+
+Exemplo de toString():
+
+2x Camisa - 50.00 Cada
+
+3️⃣ Classe Pedido
+
+Atributos:
+
+itemPedidos (List<ItemPedido>) – Lista de itens do pedido
+
+Objetivo:
+Agrupa itens em um pedido e calcula o valor total.
+
+Funcionalidades principais:
+
+addItems(ItemPedido item) – adiciona item ao pedido
+
+total() – calcula valor total (preço × quantidade)
+
+toString() – exibe resumo do pedido
+
+4️⃣ Classe Main
+
+Objetivo:
+Interação com o usuário via console:
+
+Pergunta quantos itens deseja adicionar
+
+Solicita nome, preço e quantidade para cada item
+
+Cria os objetos Produto e ItemPedido
+
+Adiciona itens ao pedido
+
+Exibe resumo do pedido com total
+
+Tratamento de exceções:
+
+IllegalArgumentException – entradas inválidas de produto ou quantidade
+
+InputMismatchException – valores não numéricos
+
+⚙️ Funcionamento do Sistema
+
+Usuário informa a quantidade de itens no pedido
+
+Para cada item, digita:
+
+Nome do produto ✅
+
+Preço ✅
+
+Quantidade ✅
+
+Sistema cria os objetos correspondentes
+
+Exibe resumo do pedido e total
+
+🖼 Exemplo de Saída
+Quantos itens no pedido? 2
+Produto #1: 
+Nome: Camisa
+Preço: 50.00
+Quantidade: 2
+Produto #2:
+Nome: Calça
+Preço: 120.00
+Quantidade: 1
+
+Pedido
+2x Camisa - 50.00 Cada
+1x Calça - 120.00 Cada
+Total do pedido: 220.00
+
+💡 Aprendizados
+
+Composição de classes (Pedido → ItemPedido → Produto)
+
+Uso de BigDecimal para valores monetários
+
+Validação de dados e tratamento de exceções
+
+Uso de StringBuilder para saídas formatadas
+
+Uso de Streams para calcular o total do pedido
